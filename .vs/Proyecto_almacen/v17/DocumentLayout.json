@@ -1,0 +1,44 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Archivos Miguel\\Universidad\\Octavo semestre\\Ingenieria de software\\Proyecto_almacen\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9C268970-1702-4A0B-B431-4D7C5BE1D32A}|Proyecto_almacen.csproj|d:\\archivos miguel\\universidad\\octavo semestre\\ingenieria de software\\proyecto_almacen\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9C268970-1702-4A0B-B431-4D7C5BE1D32A}|Proyecto_almacen.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\Archivos Miguel\\Universidad\\Octavo semestre\\Ingenieria de software\\Proyecto_almacen\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "D:\\Archivos Miguel\\Universidad\\Octavo semestre\\Ingenieria de software\\Proyecto_almacen\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T15:35:13.261Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
