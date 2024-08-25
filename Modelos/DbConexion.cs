@@ -13,7 +13,8 @@ namespace Proyecto_almacen.Controladores
 
         public DbConexion()
         {
-            string conexionDb = "Server=LAPTOP-HNTNC1IL\\SQLEXPRESS;Database=Almacen;Integrated security=true";
+            //bd rodri "Server=DESKTOP-TFHCQ27\\SQLEXPRESS;Database=Almacen;Integrated security=true;";
+            string conexionDb = "Server=DESKTOP-TFHCQ27\\SQLEXPRESS;Database=Almacen;Integrated security=true;";
             conexion = new SqlConnection(conexionDb);
 
             try
@@ -62,6 +63,39 @@ namespace Proyecto_almacen.Controladores
             comando.ExecuteNonQuery();
 
             Console.WriteLine(query);
+        }
+        public string AutenticarUsuarios(string nombreUsuario, string password)
+        {
+
+            string query = "SELECT rol FROM Usuario WHERE nombre=@nombre AND celular=@password AND estado='soltero'";
+            using (SqlCommand command = new SqlCommand(query, conexion))
+            {
+                command.Parameters.AddWithValue("@nombre", nombreUsuario);
+                command.Parameters.AddWithValue("@password", password);
+
+                try
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        string rol = reader["rol"].ToString();
+                        reader.Close();
+                        return rol;
+                    }
+                    else
+                    {
+                        reader.Close();
+                        return null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al conectar con la base de datos: " + ex.Message);
+                    return null;
+                }
+            }
         }
     }
 }

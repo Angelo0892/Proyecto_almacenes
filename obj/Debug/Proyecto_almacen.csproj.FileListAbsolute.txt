@@ -8,3 +8,15 @@ D:\Archivos Miguel\Universidad\Octavo semestre\Ingenieria de software\Proyecto_a
 D:\Archivos Miguel\Universidad\Octavo semestre\Ingenieria de software\Proyecto_almacen\obj\Debug\Proyecto_almacen.csproj.CoreCompileInputs.cache
 D:\Archivos Miguel\Universidad\Octavo semestre\Ingenieria de software\Proyecto_almacen\obj\Debug\Proyecto_almacen.exe
 D:\Archivos Miguel\Universidad\Octavo semestre\Ingenieria de software\Proyecto_almacen\obj\Debug\Proyecto_almacen.pdb
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.csproj.AssemblyReference.cache
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.csproj.SuggestedBindingRedirects.cache
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.GestionUsuario.resources
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.login.resources
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.Properties.Resources.resources
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.csproj.GenerateResource.cache
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.csproj.CoreCompileInputs.cache
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.exe
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\Debug\Proyecto_almacen.pdb
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\bin\Debug\Proyecto_almacen.exe.config
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\bin\Debug\Proyecto_almacen.exe
+C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\bin\Debug\Proyecto_almacen.pdb

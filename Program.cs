@@ -16,7 +16,7 @@ namespace Proyecto_almacen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GestionUsuario());
+            Application.Run(new login());
         }
     }
 }

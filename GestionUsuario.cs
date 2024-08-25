@@ -71,5 +71,15 @@ namespace Proyecto_almacen
 
             return paremetrosUsuario;
         }
+
+        private void GestionUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
