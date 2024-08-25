@@ -42,10 +42,8 @@
             this.botonEliminar = new System.Windows.Forms.Button();
             this.textoEstado = new System.Windows.Forms.ComboBox();
             this.textoRol = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.datosUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.datosUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -141,6 +139,7 @@
             this.botonModificar.TabIndex = 12;
             this.botonModificar.Text = "Modificar";
             this.botonModificar.UseVisualStyleBackColor = true;
+            this.botonModificar.Click += new System.EventHandler(this.AccionModificar);
             // 
             // botonEliminar
             // 
@@ -150,6 +149,7 @@
             this.botonEliminar.TabIndex = 13;
             this.botonEliminar.Text = "Eliminar";
             this.botonEliminar.UseVisualStyleBackColor = true;
+            this.botonEliminar.Click += new System.EventHandler(this.AccionEliminar);
             // 
             // textoEstado
             // 
@@ -175,39 +175,25 @@
             this.textoRol.Size = new System.Drawing.Size(120, 24);
             this.textoRol.TabIndex = 16;
             // 
-            // dataGridView1
+            // datosUsuarios
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
-            this.lastName});
-            this.dataGridView1.Location = new System.Drawing.Point(60, 336);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 17;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Nombre";
-            this.Name.MinimumWidth = 6;
-            this.Name.Name = "Name";
-            this.Name.Width = 125;
-            // 
-            // lastName
-            // 
-            this.lastName.HeaderText = "Apellido";
-            this.lastName.MinimumWidth = 6;
-            this.lastName.Name = "lastName";
-            this.lastName.Width = 125;
+            this.datosUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datosUsuarios.Location = new System.Drawing.Point(60, 335);
+            this.datosUsuarios.Name = "datosUsuarios";
+            this.datosUsuarios.ReadOnly = true;
+            this.datosUsuarios.RowHeadersWidth = 51;
+            this.datosUsuarios.RowTemplate.Height = 24;
+            this.datosUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datosUsuarios.Size = new System.Drawing.Size(772, 271);
+            this.datosUsuarios.TabIndex = 17;
+            this.datosUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ObtenerDatosFila);
             // 
             // GestionUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 649);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.datosUsuarios);
             this.Controls.Add(this.textoRol);
             this.Controls.Add(this.textoEstado);
             this.Controls.Add(this.botonEliminar);
@@ -224,7 +210,7 @@
             this.Controls.Add(this.label1);
             this.Name = "GestionUsuario";
             this.Text = "Gestión de usuarios";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datosUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,9 +232,7 @@
         private System.Windows.Forms.Button botonEliminar;
         private System.Windows.Forms.ComboBox textoEstado;
         private System.Windows.Forms.ComboBox textoRol;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
+        private System.Windows.Forms.DataGridView datosUsuarios;
     }
 }
 
