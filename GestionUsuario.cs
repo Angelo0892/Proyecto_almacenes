@@ -21,8 +21,11 @@ namespace Proyecto_almacen
         private string estado;
 
         private string nombreTabla;
+        private string nombreId;
 
-        private int idUsuario;
+        private DataTable datosTabla;
+
+        private string idUsuario;
 
         private DbConexion dbConexion;
 
@@ -30,16 +33,50 @@ namespace Proyecto_almacen
         {
             InitializeComponent();
             nombreTabla = "Usuario";
+            nombreId = "idUsuario";
+
             dbConexion = new DbConexion();
+
+            LlenarDataGrid();
         }
+
+
 
         private void AccionCrear(object sender, EventArgs e)
         {
             string[] parametrosUsuario = ObtenerArregloParametros();
 
-            dbConexion.Insertar(nombreTabla, parametrosUsuario);
+            dbConexion.Insertar(this.nombreTabla, parametrosUsuario);
+
+            vaciarCampos();
+            LlenarDataGrid();
         }
 
+        private void AccionModificar(object sender, EventArgs e)
+        {
+            string[] parametrosUsuario = ObtenerArregloParametros();
+            string[] parametrosColumna = new string[6];
+
+            parametrosColumna[0] = "nombre";
+            parametrosColumna[1] = "apellido";
+            parametrosColumna[2] = "celular";
+            parametrosColumna[3] = "rol";
+            parametrosColumna[4] = "estado";
+            parametrosColumna[5] = "idUsuario";
+
+            dbConexion.Moficar(this.nombreTabla, parametrosColumna, parametrosUsuario, this.idUsuario);
+
+            vaciarCampos();
+            LlenarDataGrid();
+        }
+
+        private void AccionEliminar(object sender, EventArgs e)
+        {
+            dbConexion.Eliminar(this.nombreTabla, this.nombreId, this.idUsuario);
+
+            vaciarCampos();
+            LlenarDataGrid();
+        }
 
         /// <summary>
         /// Función que realiza el cambio de las variables
@@ -72,6 +109,7 @@ namespace Proyecto_almacen
             return paremetrosUsuario;
         }
 
+<<<<<<< HEAD
         private void GestionUsuario_Load(object sender, EventArgs e)
         {
 
@@ -81,5 +119,35 @@ namespace Proyecto_almacen
         {
 
         }
+=======
+        private void vaciarCampos()
+        {
+            this.idUsuario = "";
+            textoNombre.Text = "";
+            textoApellido.Text = "";
+            textoCelular.Text = "";
+            textoRol.Text = "";
+            textoEstado.Text = "";
+        }
+
+
+        private void LlenarDataGrid()
+        {
+            datosTabla = dbConexion.BuscarTabla(nombreTabla);
+            datosUsuarios.DataSource = datosTabla;
+        }
+
+        private void ObtenerDatosFila(object sender, DataGridViewCellEventArgs e)
+        {
+            this.idUsuario = datosUsuarios.SelectedCells[0].Value.ToString();
+            textoNombre.Text = datosUsuarios.SelectedCells[1].Value.ToString();
+            textoApellido.Text = datosUsuarios.SelectedCells[2].Value.ToString();
+            textoCelular.Text = datosUsuarios.SelectedCells[3].Value.ToString();
+            textoRol.Text = datosUsuarios.SelectedCells[4].Value.ToString();
+            textoEstado.Text = datosUsuarios.SelectedCells[5].Value.ToString();
+        }
+
+
+>>>>>>> 4bb99c31e988a59071394b0cdae4d7b96a62334b
     }
 }

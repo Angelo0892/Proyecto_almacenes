@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -64,6 +65,7 @@ namespace Proyecto_almacen.Controladores
 
             Console.WriteLine(query);
         }
+<<<<<<< HEAD
         public string AutenticarUsuarios(string nombreUsuario, string password)
         {
 
@@ -96,6 +98,76 @@ namespace Proyecto_almacen.Controladores
                     return null;
                 }
             }
+=======
+
+        public void Moficar(string nombreTabla, string[] nombreColumna, string[] solicitudModicacion, string id)
+        {
+            int indice = 0;
+
+            string query = "UPDATE " + nombreTabla + " SET ";
+
+            foreach (string valor in solicitudModicacion)
+            {
+                if (indice != 0)
+                {
+                    query += ", ";
+                }
+
+                if (int.TryParse(valor, out int intValue))
+                {
+                    query +=  nombreColumna[indice] + " = "+ valor;
+                }
+                else if (double.TryParse(valor, out double doubleValue))
+                {
+                    query += nombreColumna[indice] + "=" + valor;
+                }
+                else
+                {
+                    query += nombreColumna[indice] + " = '" + valor + "'";
+                }
+
+                indice++;
+            }
+
+            query += " WHERE " + nombreColumna[indice] + " = " + id;
+
+            SqlCommand comando = new SqlCommand(query, conexion);
+            comando.ExecuteNonQuery();
+
+            Console.WriteLine(query);
+        }
+
+        public void Eliminar(string nombreTabla, string nombreId, string id)
+        {
+
+            string query = "DELETE FROM " + nombreTabla;
+            query += " WHERE " + nombreId + " = " + id;
+
+            if (!id.Equals(""))
+            {
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.ExecuteNonQuery();
+            }
+
+            Console.WriteLine(query);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="nombreTabla"></param>
+        /// <returns></returns>
+        public DataTable BuscarTabla(string nombreTabla)
+        {
+            string query = "SELECT * FROM " + nombreTabla;
+
+            SqlDataAdapter comando = new SqlDataAdapter(query, conexion);
+
+            DataTable datosTabla = new DataTable();
+            comando.Fill(datosTabla);
+
+            return datosTabla;
+>>>>>>> 4bb99c31e988a59071394b0cdae4d7b96a62334b
         }
     }
 }

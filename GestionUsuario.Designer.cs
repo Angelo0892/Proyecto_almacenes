@@ -42,6 +42,11 @@
             this.botonEliminar = new System.Windows.Forms.Button();
             this.textoEstado = new System.Windows.Forms.ComboBox();
             this.textoRol = new System.Windows.Forms.ComboBox();
+<<<<<<< HEAD
+=======
+            this.datosUsuarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.datosUsuarios)).BeginInit();
+>>>>>>> 4bb99c31e988a59071394b0cdae4d7b96a62334b
             this.SuspendLayout();
             // 
             // label1
@@ -148,6 +153,7 @@
             this.botonModificar.TabIndex = 12;
             this.botonModificar.Text = "Modificar";
             this.botonModificar.UseVisualStyleBackColor = true;
+            this.botonModificar.Click += new System.EventHandler(this.AccionModificar);
             // 
             // botonEliminar
             // 
@@ -158,6 +164,7 @@
             this.botonEliminar.TabIndex = 13;
             this.botonEliminar.Text = "Eliminar";
             this.botonEliminar.UseVisualStyleBackColor = true;
+            this.botonEliminar.Click += new System.EventHandler(this.AccionEliminar);
             // 
             // textoEstado
             // 
@@ -185,11 +192,32 @@
             this.textoRol.Size = new System.Drawing.Size(91, 21);
             this.textoRol.TabIndex = 16;
             // 
+<<<<<<< HEAD
+=======
+            // datosUsuarios
+            // 
+            this.datosUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datosUsuarios.Location = new System.Drawing.Point(60, 335);
+            this.datosUsuarios.Name = "datosUsuarios";
+            this.datosUsuarios.ReadOnly = true;
+            this.datosUsuarios.RowHeadersWidth = 51;
+            this.datosUsuarios.RowTemplate.Height = 24;
+            this.datosUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datosUsuarios.Size = new System.Drawing.Size(772, 271);
+            this.datosUsuarios.TabIndex = 17;
+            this.datosUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ObtenerDatosFila);
+            // 
+>>>>>>> 4bb99c31e988a59071394b0cdae4d7b96a62334b
             // GestionUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(646, 527);
+=======
+            this.ClientSize = new System.Drawing.Size(862, 649);
+            this.Controls.Add(this.datosUsuarios);
+>>>>>>> 4bb99c31e988a59071394b0cdae4d7b96a62334b
             this.Controls.Add(this.textoRol);
             this.Controls.Add(this.textoEstado);
             this.Controls.Add(this.botonEliminar);
@@ -207,7 +235,11 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "GestionUsuario";
             this.Text = "Gestión de usuarios";
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.GestionUsuario_Load);
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.datosUsuarios)).EndInit();
+>>>>>>> 4bb99c31e988a59071394b0cdae4d7b96a62334b
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,6 +261,10 @@
         private System.Windows.Forms.Button botonEliminar;
         private System.Windows.Forms.ComboBox textoEstado;
         private System.Windows.Forms.ComboBox textoRol;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.DataGridView datosUsuarios;
+>>>>>>> 4bb99c31e988a59071394b0cdae4d7b96a62334b
     }
 }
 
