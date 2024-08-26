@@ -20,3 +20,5 @@ C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\obj\D
 C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\bin\Debug\Proyecto_almacen.exe.config
 C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\bin\Debug\Proyecto_almacen.exe
 C:\Users\rodry\Desktop\proyecto almacenes\Nueva carpeta\Proyecto_almacenes\bin\Debug\Proyecto_almacen.pdb
+D:\Archivos Miguel\Universidad\Octavo semestre\Ingenieria de software\Proyecto_almacen\obj\Debug\Proyecto_almacen.login.resources
+D:\Archivos Miguel\Universidad\Octavo semestre\Ingenieria de software\Proyecto_almacen\obj\Debug\Proyecto_almacen.ReporteLog.resources

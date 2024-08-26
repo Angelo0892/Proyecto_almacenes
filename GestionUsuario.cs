@@ -1,4 +1,5 @@
 ﻿using Proyecto_almacen.Controladores;
+using Proyecto_almacen.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace Proyecto_almacen
     {
 
         private string nombre;
-        private string apellido;
+        private string codigo;
         private string celular;
         private string rol;
         private string estado;
@@ -57,8 +58,8 @@ namespace Proyecto_almacen
             string[] parametrosUsuario = ObtenerArregloParametros();
             string[] parametrosColumna = new string[6];
 
-            parametrosColumna[0] = "nombre";
-            parametrosColumna[1] = "apellido";
+            parametrosColumna[0] = "nombreU";
+            parametrosColumna[1] = "codigo";
             parametrosColumna[2] = "celular";
             parametrosColumna[3] = "rol";
             parametrosColumna[4] = "estado";
@@ -85,7 +86,7 @@ namespace Proyecto_almacen
         private void ObtenerParametros()
         {
             this.nombre = textoNombre.Text;
-            this.apellido = textoApellido.Text;
+            this.codigo = textoCodigo.Text;
             this.celular = textoCelular.Text;
             this.rol = textoRol.Text;
             this.estado = textoEstado.Text;
@@ -101,7 +102,7 @@ namespace Proyecto_almacen
             string[] paremetrosUsuario = new string [5];
 
             paremetrosUsuario[0] = this.nombre;
-            paremetrosUsuario[1] = this.apellido;
+            paremetrosUsuario[1] = this.codigo;
             paremetrosUsuario[2] = this.celular;
             paremetrosUsuario[3] = this.rol;
             paremetrosUsuario[4] = this.estado;
@@ -109,22 +110,11 @@ namespace Proyecto_almacen
             return paremetrosUsuario;
         }
 
-<<<<<<< HEAD
-        private void GestionUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-=======
         private void vaciarCampos()
         {
             this.idUsuario = "";
             textoNombre.Text = "";
-            textoApellido.Text = "";
+            textoCodigo.Text = "";
             textoCelular.Text = "";
             textoRol.Text = "";
             textoEstado.Text = "";
@@ -141,13 +131,10 @@ namespace Proyecto_almacen
         {
             this.idUsuario = datosUsuarios.SelectedCells[0].Value.ToString();
             textoNombre.Text = datosUsuarios.SelectedCells[1].Value.ToString();
-            textoApellido.Text = datosUsuarios.SelectedCells[2].Value.ToString();
+            textoCodigo.Text = datosUsuarios.SelectedCells[2].Value.ToString();
             textoCelular.Text = datosUsuarios.SelectedCells[3].Value.ToString();
             textoRol.Text = datosUsuarios.SelectedCells[4].Value.ToString();
             textoEstado.Text = datosUsuarios.SelectedCells[5].Value.ToString();
         }
-
-
->>>>>>> 4bb99c31e988a59071394b0cdae4d7b96a62334b
     }
 }
