@@ -34,6 +34,8 @@ namespace Proyecto_almacen
         {
             ObtenerDatosFromulario();
             LlenarDataGrid(this.fecha, this.tabla, this.idUsuario);
+
+            BusquedaListaOpciones();
         }
 
         private void ObtenerDatosFromulario()
@@ -61,23 +63,43 @@ namespace Proyecto_almacen
 
             string[] nombreTablas = new string[2];
 
+
             nombreTablas[0] = "Logs";
             nombreTablas[1] = "Usuario";
 
-            string[] nombreColumnas = new string[3];
+            
 
-            nombreColumnas[0] = "fecha";
-            nombreColumnas[1] = "tabla";
-            nombreColumnas[2] = "Usuario.idUsuario";
+            int[] arregloBusqueda = BusquedaListaOpciones();
 
-            string[] columnasBuscar = new string[3];
-            columnasBuscar[0] = fecha;
-            columnasBuscar[1] = tabla;
-            columnasBuscar[2] = idUsuario;
+            string[] nombreColumnas = new string[arregloBusqueda[0]];
+            string[] columnasBuscar = new string[arregloBusqueda[0]];
 
-            datosTabla = dbConexion.BuscarDosTablas(this.nombreId, columnas, nombreTablas, nombreColumnas, columnasBuscar);
+            for (int i = 0; i < arregloBusqueda[0]; i++)
+            {
+                switch (arregloBusqueda[i + 1])
+                {
+                    case 0:
+                        nombreColumnas[i] = "Usuario.idUsuario";
+                        columnasBuscar[i] = idUsuario;
+                        break;
+                    case 1:
+                        nombreColumnas[i] = "tabla";
+                        columnasBuscar[i] = tabla;
+                        break;
+                    case 2:
+                        nombreColumnas[i] = "fecha";
+                        columnasBuscar[i] = fecha;
+                        break;
+                }
+            }
 
-            reportesLog.DataSource = datosTabla;
+            if (Advertencia())
+            {
+                datosTabla = dbConexion.BuscarDosTablas(this.nombreId, columnas, nombreTablas, nombreColumnas, columnasBuscar);
+                reportesLog.DataSource = datosTabla;
+
+                reportesLog.Columns["Fecha"].DefaultCellStyle.Format = "MM/dd/yyyy";
+            }
         }
 
         private void ObtenerDatosFila(object sender, DataGridViewCellEventArgs e)
@@ -87,7 +109,51 @@ namespace Proyecto_almacen
             datoFecha.Text = reportesLog.SelectedCells[2].Value.ToString();
             datoHora.Text = reportesLog.SelectedCells[3].Value.ToString();
             datoOperacion.Text = reportesLog.SelectedCells[4].Value.ToString();
-            datoOperacionLog.Text = reportesLog.SelectedCells[5].Value.ToString();
+            datoOperacionLog.Text = reportesLog.SelectedCells[4].Value.ToString();
+        }
+
+        private int[] BusquedaListaOpciones()
+        {
+            int cantidad = 1;
+            int conteo = 1;
+
+            int[] arregloBusqueda;
+
+            foreach (int posicion in ListaOpciones.CheckedIndices)
+            {
+                cantidad++;
+            }
+
+            arregloBusqueda = new int[cantidad];
+
+            arregloBusqueda[0] = cantidad - 1;
+
+            foreach (int posicion in ListaOpciones.CheckedIndices)
+            {
+                arregloBusqueda[conteo] = posicion;
+                conteo++;
+            }
+
+            return arregloBusqueda;
+        } 
+
+        private bool Advertencia()
+        {
+            
+            if (string.IsNullOrEmpty(this.idUsuario))
+            {
+                this.idUsuario = "0";
+            }
+
+            bool esNumero = int.TryParse(this.idUsuario, out int number);
+            if (!esNumero)
+            {
+                MessageBox.Show("Advertencia:\n" +
+                "* No utilice numeros o letras donde no sea necesario"
+                , "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return esNumero;
         }
     }
 }

@@ -49,6 +49,8 @@
             this.datoFecha = new System.Windows.Forms.TextBox();
             this.datoTabla = new System.Windows.Forms.TextBox();
             this.datoOperacionLog = new System.Windows.Forms.TextBox();
+            this.ListaOpciones = new System.Windows.Forms.CheckedListBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.reportesLog)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +117,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1018, 127);
+            this.button1.Location = new System.Drawing.Point(1018, 182);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
@@ -126,7 +128,7 @@
             // reportesLog
             // 
             this.reportesLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.reportesLog.Location = new System.Drawing.Point(49, 180);
+            this.reportesLog.Location = new System.Drawing.Point(49, 227);
             this.reportesLog.Name = "reportesLog";
             this.reportesLog.ReadOnly = true;
             this.reportesLog.RowHeadersWidth = 51;
@@ -139,7 +141,7 @@
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Location = new System.Drawing.Point(555, 398);
+            this.label.Location = new System.Drawing.Point(555, 445);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(48, 16);
             this.label.TabIndex = 9;
@@ -148,7 +150,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 455);
+            this.label5.Location = new System.Drawing.Point(52, 502);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 16);
             this.label5.TabIndex = 10;
@@ -157,7 +159,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(555, 455);
+            this.label6.Location = new System.Drawing.Point(555, 502);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 16);
             this.label6.TabIndex = 11;
@@ -166,7 +168,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(52, 508);
+            this.label7.Location = new System.Drawing.Point(52, 555);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 16);
             this.label7.TabIndex = 12;
@@ -175,7 +177,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(52, 561);
+            this.label8.Location = new System.Drawing.Point(52, 608);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 16);
             this.label8.TabIndex = 13;
@@ -184,7 +186,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(52, 398);
+            this.label9.Location = new System.Drawing.Point(52, 445);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 16);
             this.label9.TabIndex = 14;
@@ -192,7 +194,7 @@
             // 
             // datoNombreU
             // 
-            this.datoNombreU.Location = new System.Drawing.Point(246, 395);
+            this.datoNombreU.Location = new System.Drawing.Point(246, 442);
             this.datoNombreU.Name = "datoNombreU";
             this.datoNombreU.ReadOnly = true;
             this.datoNombreU.Size = new System.Drawing.Size(193, 22);
@@ -200,7 +202,7 @@
             // 
             // datoHora
             // 
-            this.datoHora.Location = new System.Drawing.Point(246, 449);
+            this.datoHora.Location = new System.Drawing.Point(246, 496);
             this.datoHora.Name = "datoHora";
             this.datoHora.ReadOnly = true;
             this.datoHora.Size = new System.Drawing.Size(193, 22);
@@ -208,7 +210,7 @@
             // 
             // datoOperacion
             // 
-            this.datoOperacion.Location = new System.Drawing.Point(246, 505);
+            this.datoOperacion.Location = new System.Drawing.Point(246, 552);
             this.datoOperacion.Name = "datoOperacion";
             this.datoOperacion.ReadOnly = true;
             this.datoOperacion.Size = new System.Drawing.Size(193, 22);
@@ -216,7 +218,7 @@
             // 
             // datoFecha
             // 
-            this.datoFecha.Location = new System.Drawing.Point(705, 395);
+            this.datoFecha.Location = new System.Drawing.Point(705, 442);
             this.datoFecha.Name = "datoFecha";
             this.datoFecha.ReadOnly = true;
             this.datoFecha.Size = new System.Drawing.Size(193, 22);
@@ -224,7 +226,7 @@
             // 
             // datoTabla
             // 
-            this.datoTabla.Location = new System.Drawing.Point(705, 449);
+            this.datoTabla.Location = new System.Drawing.Point(705, 496);
             this.datoTabla.Name = "datoTabla";
             this.datoTabla.ReadOnly = true;
             this.datoTabla.Size = new System.Drawing.Size(193, 22);
@@ -232,17 +234,40 @@
             // 
             // datoOperacionLog
             // 
-            this.datoOperacionLog.Location = new System.Drawing.Point(246, 561);
+            this.datoOperacionLog.Location = new System.Drawing.Point(246, 608);
             this.datoOperacionLog.Name = "datoOperacionLog";
             this.datoOperacionLog.ReadOnly = true;
             this.datoOperacionLog.Size = new System.Drawing.Size(847, 22);
             this.datoOperacionLog.TabIndex = 20;
             // 
+            // ListaOpciones
+            // 
+            this.ListaOpciones.FormattingEnabled = true;
+            this.ListaOpciones.Items.AddRange(new object[] {
+            "Id del Usuario",
+            "Nombre de Tablas",
+            "Fecha de modificacion"});
+            this.ListaOpciones.Location = new System.Drawing.Point(49, 135);
+            this.ListaOpciones.Name = "ListaOpciones";
+            this.ListaOpciones.Size = new System.Drawing.Size(178, 72);
+            this.ListaOpciones.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(46, 105);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 16);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Buscar por:";
+            // 
             // ReporteLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 629);
+            this.ClientSize = new System.Drawing.Size(1137, 654);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.ListaOpciones);
             this.Controls.Add(this.datoOperacionLog);
             this.Controls.Add(this.datoTabla);
             this.Controls.Add(this.datoFecha);
@@ -295,5 +320,7 @@
         private System.Windows.Forms.TextBox datoFecha;
         private System.Windows.Forms.TextBox datoTabla;
         private System.Windows.Forms.TextBox datoOperacionLog;
+        private System.Windows.Forms.CheckedListBox ListaOpciones;
+        private System.Windows.Forms.Label label10;
     }
 }

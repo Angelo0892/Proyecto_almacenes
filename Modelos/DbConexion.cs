@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Proyecto_almacen.Controladores
 {
@@ -67,10 +68,19 @@ namespace Proyecto_almacen.Controladores
 
             query = query + ")";
 
-            SqlCommand comando = new SqlCommand(query, conexion);
-            comando.ExecuteNonQuery();
+            try
+            {
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e){
+                MessageBox.Show("Advertencia:\n" +
+                " * Campos unicos no pueden repetirse"
+                , "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
 
-            Console.WriteLine(query);
+            //Console.WriteLine(query);
         }
 
         public void Moficar(string nombreTabla, string[] nombreColumna, string[] solicitudModicacion, string id)
@@ -106,8 +116,17 @@ namespace Proyecto_almacen.Controladores
 
             query += " WHERE " + nombreColumna[indice] + " = " + id;
 
-            SqlCommand comando = new SqlCommand(query, conexion);
-            comando.ExecuteNonQuery();
+            try
+            {
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Advertencia:\n" +
+                " * Campos unicos no pueden repetirse"
+                , "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             Console.WriteLine(query);
         }
@@ -211,8 +230,11 @@ namespace Proyecto_almacen.Controladores
             query += nombreTablas[0] + "." + nombreId + " = " + nombreTablas[1] 
                 + "." + nombreId;
 
-            query += " WHERE ";
-
+            if (nombreColumnas.Length != 0)
+            {
+                query += " WHERE ";
+            }
+            
             foreach (string nombreColumna in nombreColumnas)
             {
                 if (conteo != 0)

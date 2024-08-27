@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Proyecto_almacen.Controladores
 {
+
     internal class ControladorUsuario
     {
     }

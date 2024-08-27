@@ -47,10 +47,18 @@ namespace Proyecto_almacen
         {
             string[] parametrosUsuario = ObtenerArregloParametros();
 
-            dbConexion.Insertar(this.nombreTabla, parametrosUsuario);
-
-            vaciarCampos();
-            LlenarDataGrid();
+           
+            if (parametrosUsuario == null)
+            {
+                Advertencia();
+            }
+            else
+            {
+                dbConexion.Insertar(this.nombreTabla, parametrosUsuario);
+                vaciarCampos();
+                LlenarDataGrid();
+            }
+            
         }
 
         private void AccionModificar(object sender, EventArgs e)
@@ -58,17 +66,24 @@ namespace Proyecto_almacen
             string[] parametrosUsuario = ObtenerArregloParametros();
             string[] parametrosColumna = new string[6];
 
-            parametrosColumna[0] = "nombreU";
-            parametrosColumna[1] = "codigo";
-            parametrosColumna[2] = "celular";
-            parametrosColumna[3] = "rol";
-            parametrosColumna[4] = "estado";
-            parametrosColumna[5] = "idUsuario";
+            if (parametrosUsuario == null)
+            {
+                Advertencia();
+            }
+            else
+            {
+                parametrosColumna[0] = "nombreU";
+                parametrosColumna[1] = "codigo";
+                parametrosColumna[2] = "celular";
+                parametrosColumna[3] = "rol";
+                parametrosColumna[4] = "estado";
+                parametrosColumna[5] = "idUsuario";
 
-            dbConexion.Moficar(this.nombreTabla, parametrosColumna, parametrosUsuario, this.idUsuario);
+                dbConexion.Moficar(this.nombreTabla, parametrosColumna, parametrosUsuario, this.idUsuario);
 
-            vaciarCampos();
-            LlenarDataGrid();
+                vaciarCampos();
+                LlenarDataGrid();
+            }
         }
 
         private void AccionEliminar(object sender, EventArgs e)
@@ -101,12 +116,28 @@ namespace Proyecto_almacen
             ObtenerParametros();
             string[] paremetrosUsuario = new string [5];
 
-            paremetrosUsuario[0] = this.nombre;
-            paremetrosUsuario[1] = this.codigo;
-            paremetrosUsuario[2] = this.celular;
-            paremetrosUsuario[3] = this.rol;
-            paremetrosUsuario[4] = this.estado;
+            bool esNumero = int.TryParse(this.celular, out int number);
+            bool celularVacio = string.IsNullOrEmpty(this.celular);
+            bool nombreVacio = string.IsNullOrEmpty(this.nombre);
+            bool codigoVacio = string.IsNullOrEmpty(this.codigo);
+            bool rolVacio = string.IsNullOrEmpty(this.rol);
+            bool estadoVacio = string.IsNullOrEmpty(this.estado);
 
+
+            if (esNumero == false || celularVacio || nombreVacio || codigoVacio || rolVacio || estadoVacio)
+            {
+                paremetrosUsuario = null;
+            }
+            else
+            {
+                paremetrosUsuario[0] = this.nombre;
+                paremetrosUsuario[1] = this.codigo;
+                paremetrosUsuario[2] = this.celular;
+                paremetrosUsuario[3] = this.rol;
+                paremetrosUsuario[4] = this.estado;
+            }
+
+            Console.WriteLine(paremetrosUsuario);
             return paremetrosUsuario;
         }
 
@@ -135,6 +166,14 @@ namespace Proyecto_almacen
             textoCelular.Text = datosUsuarios.SelectedCells[3].Value.ToString();
             textoRol.Text = datosUsuarios.SelectedCells[4].Value.ToString();
             textoEstado.Text = datosUsuarios.SelectedCells[5].Value.ToString();
+        }
+
+        private void Advertencia()
+        {
+            MessageBox.Show("Advertencia:\n" +
+                "* No deje las casillas en blanco\n" +
+                "* No utilice numeros o letras donde no sea necesario"
+                , "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
