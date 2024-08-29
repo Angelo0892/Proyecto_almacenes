@@ -109,7 +109,7 @@ namespace Proyecto_almacen
             datoFecha.Text = reportesLog.SelectedCells[2].Value.ToString();
             datoHora.Text = reportesLog.SelectedCells[3].Value.ToString();
             datoOperacion.Text = reportesLog.SelectedCells[4].Value.ToString();
-            datoOperacionLog.Text = reportesLog.SelectedCells[4].Value.ToString();
+            datoOperacionLog.Text = reportesLog.SelectedCells[5].Value.ToString();
         }
 
         private int[] BusquedaListaOpciones()

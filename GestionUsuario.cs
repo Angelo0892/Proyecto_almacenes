@@ -166,6 +166,8 @@ namespace Proyecto_almacen
             textoCelular.Text = datosUsuarios.SelectedCells[3].Value.ToString();
             textoRol.Text = datosUsuarios.SelectedCells[4].Value.ToString();
             textoEstado.Text = datosUsuarios.SelectedCells[5].Value.ToString();
+
+            //Console.Write("Como es mierda es te el item: " + datosUsuarios.SelectedCells[0]);
         }
 
         private void Advertencia()
